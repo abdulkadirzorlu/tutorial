@@ -1,14 +1,22 @@
-import React from "react";
 import ReactDOM from "react-dom"
 
 
 
 function Greeting() {
-    return <div><h2>Hello Word Component</h2></div>;
+    return (
+        <div>
+            <h3>hello people</h3>
+            <ul>
+                <li>
+                    <a href='#'>hello world</a>
+                </li>
+                <img src='' alt='' />
+                <input type='text' name='' id='' />
+                I
+            </ul>
+        </div>
+    );
 }
 
-// const Greeting = () => {
-//     return React.createElement('h1', {}, 'Hello world');
-// }
 
 ReactDOM.render(<Greeting />, document.getElementById('root'));

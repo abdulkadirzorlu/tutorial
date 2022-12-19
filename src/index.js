@@ -14,18 +14,24 @@ const secndBook = {
 function BookList() {
     return (
         <section className="booklist">
-            <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} />
+            <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} >
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </p>
+            </Book>
             <Book img={secndBook.img} title={secndBook.title} author={secndBook.author} />
         </section>
     );
 }
-const Book = ({img, title, author}) => {
-    // const { img, title, author } = props;
+const Book = (props) => {
+    const { img, title, author, children } = props;
+    console.log(props);
     return (
         <article className="book">
             <img src={img} alt="" />
             <h1>{title }</h1>
             <h4>{author}</h4>
+            {children}
         </article>
     );
 };

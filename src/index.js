@@ -23,13 +23,18 @@ const books = [
 ];
 
 function BookList() {
+    const someValue = 'shakeAndBake'
+    const displayValue = () => {
+        console.log(someValue)
+    } 
     return (
         <section className="booklist">
            {books.map((book) =>{
             return (
-                <Book {...book} key={book.id}></Book>
+                <Book {...book} key={book.id} displayValue={displayValue}  />
             );
-           } )}
+           })}
+           
         </section>
     );
 }
@@ -37,19 +42,16 @@ function BookList() {
 
 
 const Book = (props) => {
-    const { img, title, author } = props
-    const displayTitle = () => {
-        console.log(title);
-    }
+    const { img, title, author, displayValue } = props
+
     return (
         <article className="book" >
             <img src={img} alt="" />
             <h1>{title}</h1>
-            <button onClick={displayTitle}>Display title</button>
+            <button onClick={displayValue}>Click me</button>
             <h4>{author}</h4>
         </article>
     );
 };
-
 
 ReactDOM.render(<BookList />, document.getElementById('root'));

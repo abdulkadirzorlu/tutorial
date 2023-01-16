@@ -6,20 +6,17 @@ import Book from "./book";
 
 
 function BookList() {
-    const getBook = (id) => {
-        const book = Books.find((book) => book.id === id);
-        console.log(book);
-    }
-   // getBook(2);
     return (
+        <>
+            <h1 className="indexTitle">Amazon Best Sellers</h1>
         <section className="booklist">
-            {Books.map((book) =>{
-            return (
-                <Book {...book} key={book.id} getBook={getBook} />
-            );
-           })}
-           
-        </section>
+            {Books.map((book, index) =>{
+                return (
+                    <Book {...book} key={book.id} number={index} />
+                );
+            })}
+            </section>
+        </>
     );
 }
 

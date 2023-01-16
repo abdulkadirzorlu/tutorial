@@ -1,17 +1,14 @@
 import books from "./books";
 
 const Book = (props) => {
-    const { id, img, title, author, getBook } = props
-    // console.log(props);
-    const getSingleBook = () => {
-        getBook(id)
-    }
+    const { id, img, title, author, number } = props
+    console.log(number)
     return (
         <article className="book" >
-            <img src={img} alt="" />
+            <img className="img" src={img} alt={title} />
             <h1>{title}</h1>
-            <button onClick={() => getBook(id)}>Click me</button>
             <h4>{author}</h4>
+            <span className="number">#{ number + 1 }</span>
         </article>
     );
 };
